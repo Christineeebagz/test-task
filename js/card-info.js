@@ -108,22 +108,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const clone = cardTemplate.content.cloneNode(true);
     clone.querySelector(".card-img").src = item.bgPic;
 
-    // Correct selector for fb-logo and member-no
-    clone.querySelector("#fb-logo").src = item.fbLogo; // Use #fb-logo for ID selector
-    clone.querySelector(".member-no").textContent = item.members; // Use .member-no for class selector
+    clone.querySelector("#fb-logo").src = item.fbLogo;
+    clone.querySelector(".member-no").textContent = item.members;
 
     clone.querySelector(".group-name").textContent = item.groupName;
     clone.querySelector(".description").textContent = item.description;
 
-    // Update the button link and text
     const button = clone.querySelector(".button-group");
     button.href = item.link;
     button.querySelector(".button-text").textContent = item.buttonText;
 
-    // Update the group link
     const grouplink = clone.querySelector(".grouplink");
     grouplink.href = item.grouplink;
-    grouplink.querySelector(".group-name").textContent = item.groupName; // Set group name in grouplink
+    grouplink.querySelector(".group-name").textContent = item.groupName;
 
     swiperWrapper.appendChild(clone);
   });
